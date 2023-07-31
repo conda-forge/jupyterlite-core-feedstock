@@ -3,6 +3,7 @@ About jupyterlite-core-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlite-core-feedstock/blob/main/LICENSE.txt)
 
+
 About jupyterlite-core
 ----------------------
 
@@ -13,6 +14,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core
 ----------------------
 
@@ -23,6 +25,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-check
 ---------------------------------
 
@@ -33,6 +36,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with check)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-contents
 ------------------------------------
 
@@ -43,6 +47,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with contents)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-lab
 -------------------------------
 
@@ -53,6 +58,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with jupyterlab)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-libarchive
 --------------------------------------
 
@@ -63,6 +69,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with libarchive)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-mathjax
 -----------------------------------
 
@@ -73,6 +80,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with mathjax)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-serve
 ---------------------------------
 
@@ -83,6 +91,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with serve)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-core-with-translation
 ---------------------------------------
 
@@ -93,6 +102,7 @@ Package license: BSD-3-Clause
 Summary: Tools for building JupyterLite sites (with translation)
 
 Documentation: https://jupyterlite.readthedocs.io
+
 About jupyterlite-javascript-kernel
 -----------------------------------
 
@@ -103,6 +113,7 @@ Package license: BSD-3-Clause
 Summary: JavaScript kernel for JupyterLite running in a Web Worker
 
 Development: https://github.com/jupyterlite/jupyterlite
+
 About jupyterlite-core-with-all
 -------------------------------
 
