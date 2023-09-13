@@ -1,5 +1,6 @@
-{% set version = "0.1.2" %}
-{% set jupyterlab_version = ">=3.5.3,<3.6.0" %}
+{% set version = "0.2.0a0" %}
+{% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
+{% set jupyterlab_version = ">=4.0.5,<5.0.0a0" %}
 
 package:
   name: jupyterlite-core-split
@@ -8,10 +9,10 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: ec5ef69080cd868425b683da5295e9af1fbc484f6e43b39ea8c81ea4c91d25fc
+    sha256: 5596d5e95f0a4f0f9fdc1a6c75bd12ae9f7094057849915b14b4088aea8c7e7d
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: 097a9038968e1d711f7917df09ec51b63736d6d62f7444398cdd1a78a548e74d
+    sha256: 45b01363976b11237990140b9d35eb3e39980afb8237659ae8919ef0bf63bb62
 
 build:
   number: 0
@@ -303,7 +304,7 @@ outputs:
         - pip check
         - jupyter labextension list
         - jupyter labextension list 1>labextensions 2>&1
-        - grep -iE "@jupyterlite/javascript-kernel-extension.*v{{ version.replace('.', '\.') }}.*OK" labextensions
+        - grep -iE "@jupyterlite/javascript-kernel-extension.*v{{ js_version.replace('.', '\.') }}.*OK" labextensions
         - jupyter lite build
         - grep -iE "javascript-kernel-extension" _output/jupyter-lite.json
     about:

@@ -3,12 +3,17 @@ from pathlib import Path
 import os
 import tarfile
 import sys
-import json
 
 SRC_DIR = Path(os.environ["SRC_DIR"])
+JS_VERSION = (
+    os.environ["PKG_VERSION"]
+    .replace("a", "-alpha.")
+    .replace("b", "-beta.")
+    .replace("rc", "-rc.")
+)
 CORE_SRC = SRC_DIR / "jupyterlite-core"
 MOD_SRC = CORE_SRC / "jupyterlite_core"
-APP_TGZ = MOD_SRC / f"""jupyterlite-app-{os.environ["PKG_VERSION"]}.tgz"""
+APP_TGZ = MOD_SRC / f"jupyterlite-app-{JS_VERSION}.tgz"
 TPLJ = "third-party-licenses.json"
 CORE_TPLJ = CORE_SRC / TPLJ
 
