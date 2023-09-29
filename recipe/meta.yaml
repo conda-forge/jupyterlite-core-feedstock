@@ -1,4 +1,4 @@
-{% set version = "0.2.0a1" %}
+{% set version = "0.2.0a3" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
 {% set jupyterlab_version = ">=4.0.5,<5.0.0a0" %}
 
@@ -9,10 +9,10 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: b1506eb756cb1f19dd5869959e65b5ad94fcebdabb8e2d3e523d4a50cf227b57
+    sha256: ed6a349254e8f31e315ea70049778553f422e3f73cf4e6ee53477fafddb84582
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: 9e710724669e37edeb5937880ff4f2d43dceb8decd5ec9e4f75bca8a26b6db7d
+    sha256: e2e2ae3f8f501e5f43cb7de3c5d2cec158885a02aa36ca7de695b803544e8bc7
 
 build:
   number: 0
