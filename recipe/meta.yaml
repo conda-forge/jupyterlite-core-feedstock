@@ -1,4 +1,4 @@
-{% set version = "0.2.0b0" %}
+{% set version = "0.2.0b1" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
 {% set jupyterlab_version = ">=4.0.6,<5.0.0a0" %}
 
@@ -9,10 +9,10 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: f879f294371ae2a457761e92bfe14c04ccb06248cb36ae9a51b67a83495826a8
+    sha256: 71809bbf2ef426841808f71e175ec52830be34d8ac4cff66144e1de7e64368b9
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: 15ad2e15eeadf8a43e99ca75a05b6aa8f6222a3292ba27c236672dc867c5439c
+    sha256: ac51ad0d0657dd63abe962975cb0bf91e9f22e14e9d79bf615fe7a415de11076
 
 build:
   number: 0
@@ -190,32 +190,6 @@ outputs:
       license_file:
         - jupyterlite-core/LICENSE
 
-  - name: jupyterlite-core-with-mathjax
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python >=3.8
-      run:
-        - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-        - jupyter-server-mathjax >=0.2.3
-        - python >=3.8
-    test:
-      imports:
-        - jupyterlite_core
-      commands:
-        - pip check
-        - jupyter lite --help
-      requires:
-        - pip
-    about:
-      home: https://github.com/jupyterlite/jupyterlite
-      summary: Tools for building JupyterLite sites (with mathjax)
-      doc_url: https://jupyterlite.readthedocs.io
-      license: BSD-3-Clause
-      license_file:
-        - jupyterlite-core/LICENSE
-
   - name: jupyterlite-core-with-check
     build:
       noarch: python
@@ -253,7 +227,6 @@ outputs:
         - {{ pin_subpackage("jupyterlite-core-with-contents", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-lab", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-libarchive", max_pin="x.x.x") }}
-        - {{ pin_subpackage("jupyterlite-core-with-mathjax", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-serve", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-translation", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
