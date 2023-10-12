@@ -1,6 +1,6 @@
-{% set version = "0.2.0b1" %}
+{% set version = "0.2.0rc0" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.0.6,<5.0.0a0" %}
+{% set jupyterlab_version = ">=4.0.7,<5.0.0a0" %}
 
 package:
   name: jupyterlite-core-split
@@ -9,10 +9,10 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: 71809bbf2ef426841808f71e175ec52830be34d8ac4cff66144e1de7e64368b9
+    sha256: 0bbcbde0907633d5a0d7144fbe3a63d881a4e3e1fc122af7bbdca2b18b4c7fb5
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: ac51ad0d0657dd63abe962975cb0bf91e9f22e14e9d79bf615fe7a415de11076
+    sha256: 7b4b207295ee919a6a4053f7734736fa56189e76bb52425f93a795d9aee58a80
 
 build:
   number: 0
@@ -242,7 +242,7 @@ outputs:
         - diffoscope  # [linux]
         - jupyterlite-javascript-kernel
         - pip
-        - pytest-console-scripts
+        - pytest-console-scripts >=1.4.0
         - pytest-cov
     about:
       home: https://github.com/jupyterlite/jupyterlite
