@@ -1,8 +1,6 @@
-{% set jupyterlab_version = ">=4.0.7,<5.0.0a0" %}
-{% set jupyterlab_version = ">=4.0.7,<5.0.0a0" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.0.7,<5.0.0a0" %}
+{% set jupyterlab_version = ">=4.0.11,<5.0.0a0" %}
 
 package:
   name: jupyterlite-core-split
@@ -11,10 +9,10 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: 7094cd2b1cc6d8bd61f132988467900fda78caaf8ccdd839d6d50f391d5df89e
+    sha256: e8733074bda54c811997f5baf60a8c39b712768c2f899d2852a61b12b582a9f8
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: 51f08a3698255628dbaf5a53faff82202216e56d2f20fadac9198dc58d3cd44a
+    sha256: 61a8a189b59ed697f903279477b06013bce9b2bd3135204129ba13bed2d1a054
 
 build:
   number: 0
