@@ -9,7 +9,7 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: e8733074bda54c811997f5baf60a8c39b712768c2f899d2852a61b12b582a9f8
+    sha256: e40b54206ad9a72dac7190c6a48cae5aa6837056008473be6f3ab40deba280d3
   - folder: jupyterlite-javascript-kernel
     url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
     sha256: 61a8a189b59ed697f903279477b06013bce9b2bd3135204129ba13bed2d1a054
