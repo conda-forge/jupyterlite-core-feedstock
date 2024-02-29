@@ -1,6 +1,6 @@
-{% set version = "0.2.0b0" %}
+{% set version = "0.3.0b0" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.0.6,<5.0.0a0" %}
+{% set jupyterlab_version = ">=4.1.1,<4.2" %}
 
 package:
   name: jupyterlite-core-split
@@ -9,10 +9,7 @@ package:
 source:
   - folder: jupyterlite-core
     url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: f879f294371ae2a457761e92bfe14c04ccb06248cb36ae9a51b67a83495826a8
-  - folder: jupyterlite-javascript-kernel
-    url: https://pypi.io/packages/source/j/jupyterlite-javascript-kernel/jupyterlite_javascript_kernel-{{ version }}.tar.gz
-    sha256: 15ad2e15eeadf8a43e99ca75a05b6aa8f6222a3292ba27c236672dc867c5439c
+    sha256: 9a36b476ee3bb68460170936f847ee88c7f6114a24cdb1ea28bf237c527045d5
 
 build:
   number: 0
@@ -190,32 +187,6 @@ outputs:
       license_file:
         - jupyterlite-core/LICENSE
 
-  - name: jupyterlite-core-with-mathjax
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python >=3.8
-      run:
-        - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-        - jupyter-server-mathjax >=0.2.3
-        - python >=3.8
-    test:
-      imports:
-        - jupyterlite_core
-      commands:
-        - pip check
-        - jupyter lite --help
-      requires:
-        - pip
-    about:
-      home: https://github.com/jupyterlite/jupyterlite
-      summary: Tools for building JupyterLite sites (with mathjax)
-      doc_url: https://jupyterlite.readthedocs.io
-      license: BSD-3-Clause
-      license_file:
-        - jupyterlite-core/LICENSE
-
   - name: jupyterlite-core-with-check
     build:
       noarch: python
@@ -253,7 +224,6 @@ outputs:
         - {{ pin_subpackage("jupyterlite-core-with-contents", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-lab", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-libarchive", max_pin="x.x.x") }}
-        - {{ pin_subpackage("jupyterlite-core-with-mathjax", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-serve", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-translation", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
@@ -267,9 +237,8 @@ outputs:
         - pytest -vv --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --cov-fail-under=82 --no-cov-on-fail
       requires:
         - diffoscope  # [linux]
-        - jupyterlite-javascript-kernel
         - pip
-        - pytest-console-scripts
+        - pytest-console-scripts >=1.4.0
         - pytest-cov
     about:
       home: https://github.com/jupyterlite/jupyterlite
@@ -278,43 +247,6 @@ outputs:
       license: BSD-3-Clause
       license_file:
         - jupyterlite-core/LICENSE
-
-  - name: jupyterlite-javascript-kernel
-    build:
-      noarch: python
-      script: cd jupyterlite-javascript-kernel && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    requirements:
-      host:
-        - hatchling >=1.6.3,<2
-        - jupyterlab {{ jupyterlab_version }}
-        - pip
-        - python >=3.8
-      run:
-        - python >=3.8
-        - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-    test:
-      imports:
-        - jupyterlite_javascript_kernel
-      requires:
-        - jupyterlab {{ jupyterlab_version }}
-        - jupyterlite-core
-        - m2-grep  # [win]
-        - pip
-      commands:
-        - pip check
-        - jupyter labextension list
-        - jupyter labextension list 1>labextensions 2>&1
-        - grep -iE "@jupyterlite/javascript-kernel-extension.*v{{ js_version.replace('.', '\.') }}.*OK" labextensions
-        - jupyter lite build
-        - grep -iE "javascript-kernel-extension" _output/jupyter-lite.json
-    about:
-      home: https://github.com/jupyterlite/jupyterlite
-      summary: JavaScript kernel for JupyterLite running in a Web Worker
-      dev_url: https://github.com/jupyterlite/jupyterlite
-      license: BSD-3-Clause
-      license_file:
-        - jupyterlite-javascript-kernel/LICENSE
-        - jupyterlite-javascript-kernel/jupyterlite_javascript_kernel/labextension/static/third-party-licenses.json
 
 about:
   home: https://github.com/jupyterlite/jupyterlite
