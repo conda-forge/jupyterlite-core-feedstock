@@ -140,27 +140,16 @@ conda config --add channels conda-forge/label/jupyterlite_core_beta
 conda config --set channel_priority strict
 ```
 
-<<<<<<< HEAD
 Once the `conda-forge/label/jupyterlite_core_beta` channel has been enabled, `jupyterlite-core, jupyterlite-core-with-all, jupyterlite-core-with-check, jupyterlite-core-with-contents, jupyterlite-core-with-lab, jupyterlite-core-with-libarchive, jupyterlite-core-with-serve, jupyterlite-core-with-translation` can be installed with `conda`:
 
 ```
 conda install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation
-=======
-Once the `conda-forge` channel has been enabled, `jupyterlite-core, jupyterlite-core-with-all, jupyterlite-core-with-check, jupyterlite-core-with-contents, jupyterlite-core-with-lab, jupyterlite-core-with-libarchive, jupyterlite-core-with-serve, jupyterlite-core-with-translation, jupyterlite-javascript-kernel` can be installed with `conda`:
-
-```
-conda install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation jupyterlite-javascript-kernel
->>>>>>> upstream/beta
 ```
 
 or with `mamba`:
 
 ```
-<<<<<<< HEAD
 mamba install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation
-=======
-mamba install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation jupyterlite-javascript-kernel
->>>>>>> upstream/beta
 ```
 
 It is possible to list all of the versions of `jupyterlite-core` available on your platform with `conda`:
