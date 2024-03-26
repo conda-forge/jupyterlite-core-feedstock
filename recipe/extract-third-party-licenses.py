@@ -6,7 +6,7 @@ import sys
 import json
 
 SRC_DIR = Path(os.environ["SRC_DIR"])
-CORE_SRC = SRC_DIR / "jupyterlite-core"
+CORE_SRC = SRC_DIR
 MOD_SRC = CORE_SRC / "jupyterlite_core"
 APP_TGZ = MOD_SRC / f"""jupyterlite-app-{os.environ["PKG_VERSION"]}.tgz"""
 TPLJ = "third-party-licenses.json"
