@@ -92,17 +92,6 @@ Summary: Tools for building JupyterLite sites (with translation)
 
 Documentation: https://jupyterlite.readthedocs.io
 
-About jupyterlite-javascript-kernel
------------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: JavaScript kernel for JupyterLite running in a Web Worker
-
-Development: https://github.com/jupyterlite/jupyterlite
-
 About jupyterlite-core-with-all
 -------------------------------
 
@@ -140,7 +129,6 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--core--with--libarchive-green.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-libarchive) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-core-with-libarchive.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-libarchive) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-core-with-libarchive.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-libarchive) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-core-with-libarchive.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-libarchive) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--core--with--serve-green.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-serve) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-core-with-serve.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-serve) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-core-with-serve.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-serve) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-core-with-serve.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-serve) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--core--with--translation-green.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-translation) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-core-with-translation.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-translation) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-core-with-translation.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-translation) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-core-with-translation.svg)](https://anaconda.org/conda-forge/jupyterlite-core-with-translation) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--javascript--kernel-green.svg)](https://anaconda.org/conda-forge/jupyterlite-javascript-kernel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-javascript-kernel.svg)](https://anaconda.org/conda-forge/jupyterlite-javascript-kernel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-javascript-kernel.svg)](https://anaconda.org/conda-forge/jupyterlite-javascript-kernel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-javascript-kernel.svg)](https://anaconda.org/conda-forge/jupyterlite-javascript-kernel) |
 
 Installing jupyterlite-core
 ===========================
@@ -152,16 +140,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyterlite-core, jupyterlite-core-with-all, jupyterlite-core-with-check, jupyterlite-core-with-contents, jupyterlite-core-with-lab, jupyterlite-core-with-libarchive, jupyterlite-core-with-serve, jupyterlite-core-with-translation, jupyterlite-javascript-kernel` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `jupyterlite-core, jupyterlite-core-with-all, jupyterlite-core-with-check, jupyterlite-core-with-contents, jupyterlite-core-with-lab, jupyterlite-core-with-libarchive, jupyterlite-core-with-serve, jupyterlite-core-with-translation` can be installed with `conda`:
 
 ```
-conda install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation jupyterlite-javascript-kernel
+conda install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation
 ```
 
 or with `mamba`:
 
 ```
-mamba install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation jupyterlite-javascript-kernel
+mamba install jupyterlite-core jupyterlite-core-with-all jupyterlite-core-with-check jupyterlite-core-with-contents jupyterlite-core-with-lab jupyterlite-core-with-libarchive jupyterlite-core-with-serve jupyterlite-core-with-translation
 ```
 
 It is possible to list all of the versions of `jupyterlite-core` available on your platform with `conda`:
