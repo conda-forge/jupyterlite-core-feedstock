@@ -1,6 +1,7 @@
 {% set version = "0.3.0" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
 {% set jupyterlab_version = ">=4.1.5,<4.2" %}
+{% set min_python = "python >=3.8" %}
 
 # handle undefined PYTHON in `noarch: generic` packages
 {% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
@@ -19,9 +20,9 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - {{ min_python }}
   run:
-    - python >=3.8
+    - {{ min_python }}
 
 outputs:
   - name: jupyterlite-core
@@ -34,14 +35,14 @@ outputs:
         - jupyter-lite = jupyterlite_core.app:main
     requirements:
       host:
+        - {{ min_python }}
         - hatchling >=1.6.3,<2
         - pip
-        - python >=3.8
       run:
+        - {{ min_python }}
         - doit >=0.34,<1
         - importlib-metadata >=3.6
         - jupyter_core >=4.7
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -89,7 +90,6 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyterlab {{ jupyterlab_version }}
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -113,7 +113,6 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyter_server
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -137,7 +136,6 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyterlab_server >=2.8.1,<3
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -161,7 +159,6 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - tornado >=6.1
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -185,7 +182,6 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jsonschema-with-format-nongpl >=3
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -214,7 +210,6 @@ outputs:
         - {{ pin_subpackage("jupyterlite-core-with-serve", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-translation", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
