@@ -28,7 +28,7 @@ outputs:
     build:
       noarch: python
       script:
-        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
         - {{ PYTHON }} {{ RECIPE_DIR }}/extract-third-party-licenses.py
       entry_points:
         - jupyter-lite = jupyterlite_core.app:main
