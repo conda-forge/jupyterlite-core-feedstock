@@ -1,15 +1,17 @@
-{% set version = "0.3.0b0" %}
+{% set version = "0.4.0b0" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.1.1,<4.2" %}
+{% set jupyterlab_version = ">=4.2.1,<4.3" %}
+
+# handle undefined PYTHON in `noarch: generic` packages
+{% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
 
 package:
   name: jupyterlite-core-split
   version: {{ version }}
 
 source:
-  - folder: jupyterlite-core
-    url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-    sha256: 9a36b476ee3bb68460170936f847ee88c7f6114a24cdb1ea28bf237c527045d5
+  url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
+  sha256: 601e2d23b7742899f31efb16228564d74b74c07b06e50895bbca3c018e99a95d
 
 build:
   number: 0
@@ -26,7 +28,7 @@ outputs:
     build:
       noarch: python
       script:
-        - cd jupyterlite-core && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
         - {{ PYTHON }} {{ RECIPE_DIR }}/extract-third-party-licenses.py
       entry_points:
         - jupyter-lite = jupyterlite_core.app:main
@@ -54,18 +56,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
-        - jupyterlite-core/third-party-licenses.json
+        - LICENSE
+        - third-party-licenses.json
 
   - name: jupyterlite-core-with-libarchive
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-        - python >=3.8
         - python-libarchive-c >=4.0
     test:
       imports:
@@ -81,18 +80,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-lab
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyterlab {{ jupyterlab_version }}
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -107,18 +103,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-contents
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyter_server
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -133,18 +126,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-translation
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyterlab_server >=2.8.1,<3
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -159,18 +149,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-serve
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - tornado >=6.1
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -185,18 +172,15 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-check
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jsonschema-with-format-nongpl >=3
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
@@ -211,14 +195,12 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
   - name: jupyterlite-core-with-all
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python >=3.8
       run:
         - {{ pin_subpackage("jupyterlite-core-with-check", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-contents", max_pin="x.x.x") }}
@@ -227,14 +209,13 @@ outputs:
         - {{ pin_subpackage("jupyterlite-core-with-serve", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core-with-translation", max_pin="x.x.x") }}
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
-        - python >=3.8
     test:
       imports:
         - jupyterlite_core
       commands:
         - pip check
         - jupyter lite --help
-        - pytest -vv --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --cov-fail-under=82 --no-cov-on-fail
+        - pytest -vv --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
       requires:
         - diffoscope  # [linux]
         - pip
@@ -246,7 +227,7 @@ outputs:
       doc_url: https://jupyterlite.readthedocs.io
       license: BSD-3-Clause
       license_file:
-        - jupyterlite-core/LICENSE
+        - LICENSE
 
 about:
   home: https://github.com/jupyterlite/jupyterlite
