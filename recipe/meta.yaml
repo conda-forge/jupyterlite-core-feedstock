@@ -1,7 +1,6 @@
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.1.5,<4.2" %}
-{% set min_python = "python >=3.8" %}
+{% set jupyterlab_version = ">=4.2.3,<4.3" %}
 
 # handle undefined PYTHON in `noarch: generic` packages
 {% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
@@ -12,7 +11,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 5a97e74a93d487c0a2ce6a4615cd721a39686cdce9d329c241404e985157f8f9
+  sha256: 7f2f3b5dd92c053e1da6ea80c4d127deb64654632caa01f360a139b7604fc0ce
 
 build:
   number: 0
@@ -20,29 +19,29 @@ build:
 
 requirements:
   host:
-    - {{ min_python }}
+    - python >=3.8
   run:
-    - {{ min_python }}
+    - python >=3.8
 
 outputs:
   - name: jupyterlite-core
     build:
       noarch: python
       script:
-        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
         - {{ PYTHON }} {{ RECIPE_DIR }}/extract-third-party-licenses.py
       entry_points:
         - jupyter-lite = jupyterlite_core.app:main
     requirements:
       host:
-        - {{ min_python }}
         - hatchling >=1.6.3,<2
         - pip
+        - python >=3.8
       run:
-        - {{ min_python }}
         - doit >=0.34,<1
         - importlib-metadata >=3.6
         - jupyter_core >=4.7
+        - python >=3.8
     test:
       imports:
         - jupyterlite_core
