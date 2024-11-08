@@ -1,11 +1,11 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
 
 # the `if` keeps the bot from making duplicates
 {% if 1 %}{% set jupyterlab_version = ">=4.2.5,<4.3" %}{% endif %}
 
-# handle undefined PYTHON in `noarch: generic` packages
+{% set python_min = python_min | default("3.9") %}
 {% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
 
 package:
@@ -13,8 +13,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 85fa2c275225a1fbce7821dc42e8c3a6be7da0e4589f59bdbff7688a5e333774
+  url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
+  sha256: 652b156c9e0a1236109393c954923305cd347f10673ac373f89a69e4460c6c47
 
 build:
   number: 0
@@ -22,9 +22,9 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 outputs:
   - name: jupyterlite-core
@@ -39,12 +39,12 @@ outputs:
       host:
         - hatchling >=1.6.3,<2
         - pip
-        - python >=3.8
+        - python {{ python_min }}
       run:
         - doit >=0.34,<1
         - importlib-metadata >=3.6
         - jupyter_core >=4.7
-        - python >=3.8
+        - python >={{ python_min }}
     test:
       imports:
         - jupyterlite_core
@@ -53,6 +53,7 @@ outputs:
         - jupyter-lite --help
       requires:
         - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/jupyterlite/jupyterlite
       summary: Tools for building JupyterLite sites
