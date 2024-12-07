@@ -1,4 +1,4 @@
-{% set version = "0.4.4" %}
+{% set version = "0.4.5" %}
 
 {% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
 
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 652b156c9e0a1236109393c954923305cd347f10673ac373f89a69e4460c6c47
+  sha256: beddbe3a1064591efbfdfec0da5bc80ec491efd53501fcf8ad05ea225900cf08
 
 build:
   number: 0
