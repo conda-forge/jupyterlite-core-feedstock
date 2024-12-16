@@ -1,8 +1,14 @@
-{% set version = "0.4.0a3" %}
-{% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
-{% set jupyterlab_version = ">=4.2.1,<4.3" %}
+{% set version = "0.5.0a0" %}
 
-# handle undefined PYTHON in `noarch: generic` packages
+{% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
+
+# the `if` keeps the bot from making duplicates
+{% if 1 %}
+  {% set jupyterlab_version = ">=4.3.3,<4.4" %}
+  {% set notebook_version = ">=7.3.1,<7.4" %}
+{% endif %}
+
+{% set python_min = python_min | default("3.9") %}
 {% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
 
 package:
@@ -10,8 +16,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 7adf7f407a6a1b13b082d89e2541be47399b88a32e2e618fdf5eabb3dc035f86
+  url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
+  sha256: beddbe3a1064591efbfdfec0da5bc80ec491efd53501fcf8ad05ea225900cf08
 
 build:
   number: 0
@@ -19,9 +25,9 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 outputs:
   - name: jupyterlite-core
@@ -36,12 +42,12 @@ outputs:
       host:
         - hatchling >=1.6.3,<2
         - pip
-        - python >=3.8
+        - python {{ python_min }}
       run:
         - doit >=0.34,<1
         - importlib-metadata >=3.6
         - jupyter_core >=4.7
-        - python >=3.8
+        - python >={{ python_min }}
     test:
       imports:
         - jupyterlite_core
@@ -50,6 +56,7 @@ outputs:
         - jupyter-lite --help
       requires:
         - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/jupyterlite/jupyterlite
       summary: Tools for building JupyterLite sites
@@ -89,6 +96,7 @@ outputs:
       run:
         - {{ pin_subpackage("jupyterlite-core", max_pin="x.x.x") }}
         - jupyterlab {{ jupyterlab_version }}
+        - notebook {{ notebook_version }}
     test:
       imports:
         - jupyterlite_core
