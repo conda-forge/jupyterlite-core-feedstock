@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 29409fbf8010ec5620a60e8b1c4ea78758dd7d176a2b45923e1f67bab0290603
+  sha256: 37d5e3c13ba79d3bf7bb6ed85cef3f3412614c5453bf04fc65dad03932b4ab1e
 
 build:
   number: 0
