@@ -15,17 +15,6 @@ Summary: Tools for building JupyterLite sites
 
 Documentation: https://jupyterlite.readthedocs.io
 
-About jupyterlite-core
-----------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites
-
-Documentation: https://jupyterlite.readthedocs.io
-
 About jupyterlite-core-with-check
 ---------------------------------
 
