@@ -1,5 +1,6 @@
 bot:
   inspection: hint-all
+channel_priority: disabled
 conda_build:
   error_overlinking: true
 conda_build_tool: rattler-build
