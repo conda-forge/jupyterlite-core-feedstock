@@ -4,7 +4,6 @@ schema_version: 1
 
 context:
   version: 0.6.0a0
-  js_version: ${{ version | replace("a", "-alpha.") | replace("b", "-beta.") | replace("rc", "-rc.") }}
   jupyterlab_version: ">=4.4.0a2,<4.5"
   notebook_version: ">=7.4.0a1,<7.5"
   PYTHON: ${{ PYTHON | default("$PYTHON") }}
