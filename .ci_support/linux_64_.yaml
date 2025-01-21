@@ -1,9 +1,7 @@
-ace:
-- 8.0.2
 cdt_name:
 - conda
 channel_sources:
-- conda-forge
+- conda-forge/label/notebook_alpha,conda-forge/label/jupyterlab_alpha,conda-forge
 channel_targets:
 - conda-forge jupyterlite_core_alpha
 docker_image:
