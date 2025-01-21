@@ -1,15 +1,12 @@
-{% set version = "0.5.0a2" %}
-
-{% set js_version = version.replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.") %}
+{% set version = "0.6.0a0" %}
 
 # the `if` keeps the bot from making duplicates
 {% if 1 %}
-  {% set jupyterlab_version = ">=4.3.4,<4.4" %}
-  {% set notebook_version = ">=7.3.2,<7.4" %}
+  {% set jupyterlab_version = ">=4.4.0a2,<4.5" %}
+  {% set notebook_version = ">=7.4.0a1,<7.5" %}
 {% endif %}
 
-{% set python_min = python_min | default("3.9") %}
-{% if PYTHON is undefined %}{% set PYTHON = "$PYTHON" %}{% endif %}
+{% set PYTHON = PYTHON | default("$PYTHON") %}
 
 package:
   name: jupyterlite-core-split
@@ -17,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: da63dabca0586afc85c3444866ac5c726c0470d4b4df83bcd31538d615888e76
+  sha256: 9a7d75ad67e61e19e42e39c6b25b20f61ef69fe9bfb9bd2c6e263b193d9becd6
 
 build:
   number: 0
