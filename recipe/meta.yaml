@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 # handle undefined PYTHON in noarch: generic outputs
 {% set PYTHON = PYTHON | default("$PYTHON") %}
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: b9fb0704a77f46ad205577fa1aac3bcbb2caa33db1d07850af542390707f19e3
+  sha256: c6eebc93b914b33d57ce5838cc1db197500ab8d6360fce9b163920011936c8e1
 
 build:
   number: 0
