@@ -1,9 +1,9 @@
-{% set version = "0.6.0a1" %}
+{% set version = "0.6.0a2" %}
 
 # the `if` keeps the bot from making duplicates
 {% if 1 %}
-  {% set jupyterlab_version = ">=4.4.0a3,<4.5" %}
-  {% set notebook_version = ">=7.4.0a2,<7.5" %}
+  {% set jupyterlab_version = ">=4.4.0b0,<4.5" %}
+  {% set notebook_version = ">=7.4.0b0,<7.5" %}
 {% endif %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 2099f6616418ad2c4b3d605745f5d48d5ae82477878b38483d1cd52a024bda98
+  sha256: 8c5141b6b755fc21c4379a547a4ad67922655880e6813d78a0a4d8ddae83960a
 
 build:
   number: 0
