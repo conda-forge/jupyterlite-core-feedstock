@@ -1,4 +1,4 @@
-{% set version = "0.6.0a3" %}
+{% set version = "0.6.0a4" %}
 
 # the `if` keeps the bot from making duplicates
 {% if 1 %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-{{ version }}.tar.gz
-  sha256: 11fbd701328f22e2cbfb0debc0e8d5ee8f1d1ad3162174f2fbd5929f1e700285
+  sha256: 676dcddd94faaa62dbd395d1844bb985cc070390c604b575da96b4d0593c0612
 
 build:
   number: 0
