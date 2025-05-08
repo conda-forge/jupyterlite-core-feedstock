@@ -260,7 +260,7 @@ outputs:
           - pip check
           - jupyter lite --help
           - coverage run --source=jupyterlite_core --branch -m pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess
-          - coverage report --show-missing --skip-covered --fail --cov-fail-under=93
+          - coverage report --show-missing --skip-covered --fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
       license: BSD-3-Clause
