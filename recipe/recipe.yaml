@@ -5,6 +5,7 @@ context:
   version: 0.6.0a10
   jupyterlab_version: ">=4.4.2,<4.5.0a0"
   notebook_version: ">=7.4.2,<7.5.0a0"
+  python_check_max: "3.13"
 
 recipe:
   name: jupyterlite-core-split
@@ -45,7 +46,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -74,7 +75,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -103,7 +104,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -131,7 +132,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -159,7 +160,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -187,7 +188,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -214,7 +215,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -247,7 +248,7 @@ outputs:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - 3.13.*
+            - ${{ python_check_max }}.*
       - requirements:
           run:
             - pytest-console-scripts >=1.4.0
@@ -258,7 +259,8 @@ outputs:
         script:
           - pip check
           - jupyter lite --help
-          - pytest -vv --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
+          - coverage run --source=jupyterlite_core --branch -m pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess
+          - coverage report --show-missing --skip-covered --fail --cov-fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
       license: BSD-3-Clause
