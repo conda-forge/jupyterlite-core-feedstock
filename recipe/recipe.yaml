@@ -257,17 +257,20 @@ outputs:
               then:
                 - diffoscope
         script:
-          - pip check
-          - jupyter lite --help
-          - pytest -vv
-            --tb=long
-            --color=yes
-            --pyargs jupyterlite_core
-            --script-launch-mode=subprocess
-            --cov=jupyterlite_core
-            --cov-report=term-missing:skip-covered
-            --no-cov-on-fail
-            --cov-fail-under=93
+          env:
+            JUPYTER_PLATFORM_DIRS: "1"
+          content:
+            - pip check
+            - jupyter lite --help
+            - pytest -vv
+              --tb=long
+              --color=yes
+              --pyargs jupyterlite_core
+              --script-launch-mode=subprocess
+              --cov=jupyterlite_core
+              --cov-report=term-missing:skip-covered
+              --no-cov-on-fail
+              --cov-fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
       license: BSD-3-Clause
