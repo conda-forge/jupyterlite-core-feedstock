@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 0.6.0b0
+  version: 0.6.0b1
   jupyterlab_version: ">=4.4.2,<4.5.0a0"
   notebook_version: ">=7.4.2,<7.5.0a0"
   python_check_max: "3.13"
@@ -13,7 +13,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 745d22f2a4d354f5a521f89335e0a6b387b25f6227adf13aac0b0b2a82216662
+  sha256: 5fb440b79191e4581c93d7587d35f5cfaee59ad1d485a8f24d2442b8e8959f08
 
 build:
   number: 0
