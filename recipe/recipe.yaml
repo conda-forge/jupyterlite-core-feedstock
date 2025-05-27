@@ -255,6 +255,7 @@ outputs:
           run:
             - pytest-console-scripts >=1.4.0
             - pytest-cov
+            - python ${{ python_min }}.*
             - if: linux
               then:
                 - diffoscope
