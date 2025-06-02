@@ -13,73 +13,7 @@ Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites
 
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-check
----------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with check)
-
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-contents
-------------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with contents)
-
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-lab
--------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with jupyterlab)
-
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-libarchive
---------------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with libarchive)
-
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-serve
----------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with serve)
-
-Documentation: https://jupyterlite.readthedocs.io
-
-About jupyterlite-core-with-translation
----------------------------------------
-
-Home: https://github.com/jupyterlite/jupyterlite
-
-Package license: BSD-3-Clause
-
-Summary: Tools for building JupyterLite sites (with translation)
-
-Documentation: https://jupyterlite.readthedocs.io
+Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-all
 -------------------------------
@@ -90,7 +24,73 @@ Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with all)
 
-Documentation: https://jupyterlite.readthedocs.io
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-check
+---------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with check)
+
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-contents
+------------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with contents)
+
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-lab
+-------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with jupyterlab)
+
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-libarchive
+--------------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with libarchive)
+
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-serve
+---------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with serve)
+
+Documentation: https://jupyterlite.readthedocs.io/
+
+About jupyterlite-core-with-translation
+---------------------------------------
+
+Home: https://github.com/jupyterlite/jupyterlite
+
+Package license: BSD-3-Clause
+
+Summary: Tools for building JupyterLite sites (with translation)
+
+Documentation: https://jupyterlite.readthedocs.io/
 
 Current build status
 ====================
