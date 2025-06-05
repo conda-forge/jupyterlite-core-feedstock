@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.6.0"
+  version: "0.6.1"
   jupyterlab_version: ">=4.4.3,<4.5.0a0"
   notebook_version: ">=7.4.3,<7.5.0a0"
   python_check_max: "3.13"
@@ -13,7 +13,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 2d846506fd1f273a53226fddd993ad0f91374359152ad6c7c29c6d5314e93943
+  sha256: ce01e67772d3bd240502bac7e0fcbe2770324f08841437091ea01239a9b04645
 
 build:
   number: 0
@@ -265,15 +265,7 @@ outputs:
           content:
             - pip check
             - jupyter lite --help
-            - pytest -vv
-              --tb=long
-              --color=yes
-              --pyargs jupyterlite_core
-              --script-launch-mode=subprocess
-              --cov=jupyterlite_core
-              --cov-report=term-missing:skip-covered
-              --no-cov-on-fail
-              --cov-fail-under=93
+            - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
       license: BSD-3-Clause
