@@ -3,8 +3,8 @@ schema_version: 1
 
 context:
   version: "0.6.4"
-  jupyterlab_version: ">=4.4.4,<4.5.0a0"
-  notebook_version: ">=7.4.4,<7.5.0a0"
+  jupyterlab_version: ">=4.4.5,<4.5.0a0"
+  notebook_version: ">=7.4.5,<7.5.0a0"
   python_check_max: "3.13"
 
 recipe:
