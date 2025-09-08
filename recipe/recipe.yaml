@@ -3,8 +3,10 @@ schema_version: 1
 
 context:
   version: "0.7.0a5"
-  jupyterlab_version: ">=4.5.0a3,<4.6.0"
-  notebook_version: ">=7.5.0a2,<7.6.0"
+  jupyterlab_min: "4.5.0a3"
+  jupyterlab_max: "4.6.0"
+  notebook_min: "7.5.0a2"
+  notebook_max: "7.6.0"
   python_check_max: "3.13"
 
 recipe:
@@ -96,8 +98,8 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("jupyterlite-core", exact=True) }}
-        - jupyterlab ${{ jupyterlab_version }}
-        - notebook ${{ notebook_version }}
+        - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
+        - notebook >=${{ notebook_min }},<${{ notebook_max}}
     tests:
       - python:
           imports: jupyterlite_core
