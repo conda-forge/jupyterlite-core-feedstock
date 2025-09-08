@@ -99,7 +99,7 @@ outputs:
       run:
         - ${{ pin_subpackage("jupyterlite-core", exact=True) }}
         - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
-        - notebook >=${{ notebook_min }},<${{ notebook_max}}
+        - notebook >=${{ notebook_min }},<${{ notebook_max }}
     tests:
       - python:
           imports: jupyterlite_core
