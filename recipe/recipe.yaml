@@ -2,9 +2,11 @@
 schema_version: 1
 
 context:
-  version: "0.7.0a4"
-  jupyterlab_version: ">=4.5.0a3,<4.6.0"
-  notebook_version: ">=7.5.0a2,<7.6.0"
+  version: "0.7.0a5"
+  jupyterlab_min: "4.5.0a3"
+  jupyterlab_max: "4.6.0"
+  notebook_min: "7.5.0a2"
+  notebook_max: "7.6.0"
   python_check_max: "3.13"
 
 recipe:
@@ -13,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: c8a04d2b2a7f7920512332dd3f41061085a4c65b1a804abd65cf3bfc41588531
+  sha256: d1403805ffe33c802e3962a33b2541a12e3aa52c64a9869ae2641d43cf3235c6
 
 build:
   number: 0
@@ -96,8 +98,8 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("jupyterlite-core", exact=True) }}
-        - jupyterlab ${{ jupyterlab_version }}
-        - notebook ${{ notebook_version }}
+        - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
+        - notebook >=${{ notebook_min }},<${{ notebook_max }}
     tests:
       - python:
           imports: jupyterlite_core
