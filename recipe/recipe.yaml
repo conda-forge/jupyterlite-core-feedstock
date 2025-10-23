@@ -2,10 +2,12 @@
 schema_version: 1
 
 context:
-  version: 0.6.0b1
-  jupyterlab_version: ">=4.4.2,<4.5.0a0"
-  notebook_version: ">=7.4.2,<7.5.0a0"
-  python_check_max: "3.13"
+  version: "0.7.0b0"
+  jupyterlab_min: "4.5.0b1"
+  jupyterlab_max: "4.6.0"
+  notebook_min: "7.5.0b1"
+  notebook_max: "7.6.0"
+  python_check_max: "3.14"
 
 recipe:
   name: jupyterlite-core-split
@@ -13,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 5fb440b79191e4581c93d7587d35f5cfaee59ad1d485a8f24d2442b8e8959f08
+  sha256: 3ec7e643857d2b3bbb4c6d8c97b2168215cfede7c042e479f18c6cfc831b6059
 
 build:
   number: 0
@@ -37,7 +39,6 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - doit >=0.34,<1
-        - importlib-metadata >=3.6
         - jupyter_core >=4.7
         - python >=${{ python_min }}
     tests:
@@ -96,8 +97,8 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("jupyterlite-core", exact=True) }}
-        - jupyterlab ${{ jupyterlab_version }}
-        - notebook ${{ notebook_version }}
+        - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
+        - notebook >=${{ notebook_min }},<${{ notebook_max }}
     tests:
       - python:
           imports: jupyterlite_core
@@ -254,7 +255,8 @@ outputs:
       - requirements:
           run:
             - pytest-console-scripts >=1.4.0
-            - pytest-cov
+            - pytest-cov <7
+            - python ${{ python_min }}.*
             - if: linux
               then:
                 - diffoscope
@@ -264,15 +266,7 @@ outputs:
           content:
             - pip check
             - jupyter lite --help
-            - pytest -vv
-              --tb=long
-              --color=yes
-              --pyargs jupyterlite_core
-              --script-launch-mode=subprocess
-              --cov=jupyterlite_core
-              --cov-report=term-missing:skip-covered
-              --no-cov-on-fail
-              --cov-fail-under=93
+            - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
       license: BSD-3-Clause

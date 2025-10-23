@@ -1,2 +1,5 @@
+channel_sources:
+  - conda-forge/label/jupyterlab_beta,conda-forge/label/notebook_beta,conda-forge
+
 channel_targets:
   - conda-forge jupyterlite_core_beta
