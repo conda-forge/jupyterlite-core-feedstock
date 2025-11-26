@@ -2,10 +2,12 @@
 schema_version: 1
 
 context:
-  version: "0.6.4"
-  jupyterlab_version: ">=4.4.5,<4.5.0a0"
-  notebook_version: ">=7.4.5,<7.5.0a0"
-  python_check_max: "3.13"
+  version: "0.7.0"
+  jupyterlab_min: "4.5.0"
+  jupyterlab_max: "4.6.0"
+  notebook_min: "7.5.0"
+  notebook_max: "7.6.0"
+  python_check_max: "3.14"
 
 recipe:
   name: jupyterlite-core-split
@@ -13,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: a753c3d83a1f4112d8f04f6e103945c3f6d746ae27d2293af74fb862851e91e3
+  sha256: a7218331d31b88dfda17413849e03530bd7af0b9f4528b8060e65067ecd85498
 
 build:
   number: 0
@@ -37,7 +39,6 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - doit >=0.34,<1
-        - importlib-metadata >=3.6
         - jupyter_core >=4.7
         - python >=${{ python_min }}
     tests:
@@ -96,8 +97,8 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("jupyterlite-core", exact=True) }}
-        - jupyterlab ${{ jupyterlab_version }}
-        - notebook ${{ notebook_version }}
+        - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
+        - notebook >=${{ notebook_min }},<${{ notebook_max }}
     tests:
       - python:
           imports: jupyterlite_core
@@ -254,7 +255,7 @@ outputs:
       - requirements:
           run:
             - pytest-console-scripts >=1.4.0
-            - pytest-cov
+            - pytest-cov <7
             - python ${{ python_min }}.*
             - if: linux
               then:
