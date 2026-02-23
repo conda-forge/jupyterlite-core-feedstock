@@ -55,12 +55,9 @@ outputs:
           - jupyter-lite --help
     about:
       summary: Tools for building JupyterLite sites
-      license: BSD-3-Clause
       license_file:
         - LICENSE
         - third-party-licenses.json
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
 
   - package:
       name: jupyterlite-core-with-libarchive
@@ -83,12 +80,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with libarchive)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [libarchive])
 
   - package:
       name: jupyterlite-core-with-lab
@@ -112,12 +104,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with jupyterlab)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [lab])
 
   - package:
       name: jupyterlite-core-with-contents
@@ -140,12 +127,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with contents)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [contents])
 
   - package:
       name: jupyterlite-core-with-translation
@@ -168,12 +150,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with translation)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [translation])
 
   - package:
       name: jupyterlite-core-with-serve
@@ -196,13 +173,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with serve)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
-
+      summary: Tools for building JupyterLite sites (with [serve])
 
   - package:
       name: jupyterlite-core-with-check
@@ -225,12 +196,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with check)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [check])
 
   - package:
       name: jupyterlite-core-with-all
@@ -268,18 +234,14 @@ outputs:
             - jupyter lite --help
             - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
-      summary: Tools for building JupyterLite sites (with all)
-      license: BSD-3-Clause
-      license_file:
-        - LICENSE
-      homepage: https://github.com/jupyterlite/jupyterlite
-      documentation: https://jupyterlite.readthedocs.io
+      summary: Tools for building JupyterLite sites (with [all])
 
 about:
   summary: Tools for building JupyterLite sites
   license: BSD-3-Clause
   license_file: LICENSE
-  homepage: https://github.com/jupyterlite/jupyterlite
+  homepage: https://pypi.org/project/jupyterlite-core
+  repository: https://github.com/jupyterlite/jupyterlite
   documentation: https://jupyterlite.readthedocs.io
 
 extra:
