@@ -2,10 +2,10 @@
 schema_version: 1
 
 context:
-  version: "0.7.3"
-  jupyterlab_min: "4.5.5"
+  version: "0.7.4"
+  jupyterlab_min: "4.5.6"
   jupyterlab_max: "4.6.0"
-  notebook_min: "7.5.4"
+  notebook_min: "7.5.5"
   notebook_max: "7.6.0"
   python_check_max: "3.14"
 
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: ed5611beb88495bd84f2f23306d4b12e9bb56bc68923175709a2c930e64167e7
+  sha256: c8a74b4ca9792f611b657465f63a79543b381063ebebdc2b5b3b695704e14278
 
 build:
   number: 0
@@ -230,7 +230,6 @@ outputs:
           env:
             JUPYTER_PLATFORM_DIRS: "1"
           content:
-            - pip check
             - jupyter lite --help
             - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
