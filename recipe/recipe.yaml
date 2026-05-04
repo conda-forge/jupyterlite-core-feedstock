@@ -3,9 +3,9 @@ schema_version: 1
 
 context:
   version: "0.8.0a1"
-  jupyterlab_min: "4.6.0a1"
+  jupyterlab_min: "4.6.0a5"
   jupyterlab_max: "4.7.0"
-  notebook_min: "7.6.0a1"
+  notebook_min: "7.6.0a5"
   notebook_max: "7.7.0"
   python_check_max: "3.14"
 
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 70d0aac18360d2a16fde04cb93606eeaf625f4cf16c5ab9e75bd9a6e3d1cb170
+  sha256: 7eb74601a363e17f901c2689171e835f8ebf2f27678f0808538001f734d74c89
 
 build:
   number: 0
@@ -39,7 +39,6 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - doit >=0.34,<1
-        - importlib-metadata >=3.6
         - jupyter_core >=4.7
         - python >=${{ python_min }}
     tests:
