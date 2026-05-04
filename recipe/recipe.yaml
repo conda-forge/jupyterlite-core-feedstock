@@ -3,9 +3,9 @@ schema_version: 1
 
 context:
   version: "0.7.5"
-  jupyterlab_min: "4.5.6"
+  jupyterlab_min: "4.5.7"
   jupyterlab_max: "4.6.0"
-  notebook_min: "7.5.5"
+  notebook_min: "7.5.6"
   notebook_max: "7.6.0"
   python_check_max: "3.14"
 
