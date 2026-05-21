@@ -2,11 +2,11 @@
 schema_version: 1
 
 context:
-  version: "0.7.0b1"
-  jupyterlab_min: "4.5.0rc0"
-  jupyterlab_max: "4.6.0"
-  notebook_min: "7.5.0rc0"
-  notebook_max: "7.6.0"
+  version: "0.8.0b0"
+  jupyterlab_min: "4.6.0b0"
+  jupyterlab_max: "4.7.0"
+  notebook_min: "7.6.0b0"
+  notebook_max: "7.7.0"
   python_check_max: "3.14"
 
 recipe:
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: ac514882892dcfd409c38050cf8eef7a3beffce21c78c0a59a52b37df137e484
+  sha256: 397f09385b28e25cb1383d1e0d02812abe0a39a527229186e07ce6f90052e4e0
 
 build:
   number: 0
@@ -255,7 +255,7 @@ outputs:
       - requirements:
           run:
             - pytest-console-scripts >=1.4.0
-            - pytest-cov <7
+            - pytest-cov >=7
             - python ${{ python_min }}.*
             - if: linux
               then:
@@ -266,6 +266,7 @@ outputs:
           content:
             - pip check
             - jupyter lite --help
+            - echo "tool.coverage.run.patch = ['subprocess']" > pyproject.toml
             - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
       summary: Tools for building JupyterLite sites (with all)
