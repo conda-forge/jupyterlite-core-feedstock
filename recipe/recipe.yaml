@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.8.0b0"
+  version: "0.8.0b1"
   jupyterlab_min: "4.6.0b1"
   jupyterlab_max: "4.7.0"
   notebook_min: "7.6.0b1"
