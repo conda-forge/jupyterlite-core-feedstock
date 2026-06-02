@@ -3,9 +3,9 @@ schema_version: 1
 
 context:
   version: "0.8.0b0"
-  jupyterlab_min: "4.6.0b0"
+  jupyterlab_min: "4.6.0b1"
   jupyterlab_max: "4.7.0"
-  notebook_min: "7.6.0b0"
+  notebook_min: "7.6.0b1"
   notebook_max: "7.7.0"
   python_check_max: "3.14"
 
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 397f09385b28e25cb1383d1e0d02812abe0a39a527229186e07ce6f90052e4e0
+  sha256: eb2be5b66d964396c2a28d273b7fc0902cf587de435142f6a23df2367382b379
 
 build:
   number: 0
