@@ -7,104 +7,88 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlite-cor
 About jupyterlite-core
 ----------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-all
 -------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [all])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-check
 ---------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [check])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-contents
 ------------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [contents])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-lab
 -------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [lab])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-libarchive
 --------------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [libarchive])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-serve
 ---------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [serve])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
 About jupyterlite-core-with-translation
 ---------------------------------------
 
-Home: https://pypi.org/project/jupyterlite-core
+Home: https://github.com/jupyterlite/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: Tools for building JupyterLite sites (with [translation])
-
-Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
@@ -115,7 +99,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/jupyterlite-core-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/jupyterlite-core-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
