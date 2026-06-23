@@ -243,7 +243,8 @@ about:
   summary: ${{ summary }}
   license: BSD-3-Clause
   license_file: LICENSE
-  homepage: https://github.com/jupyterlite/jupyterlite
+  homepage: https://pypi.org/project/jupyterlite-core
+  repository: https://github.com/jupyterlite/jupyterlite
   documentation: https://jupyterlite.readthedocs.io
 
 extra:
