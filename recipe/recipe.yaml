@@ -2,12 +2,13 @@
 schema_version: 1
 
 context:
-  version: "0.7.6"
-  jupyterlab_min: "4.5.7"
-  jupyterlab_max: "4.6.0"
-  notebook_min: "7.5.6"
-  notebook_max: "7.6.0"
+  version: "0.8.0"
+  jupyterlab_min: "4.6.0"
+  jupyterlab_max: "4.7.0"
+  notebook_min: "7.6.0"
+  notebook_max: "7.7.0"
   python_check_max: "3.14"
+  summary: Tools for building JupyterLite sites
 
 recipe:
   name: jupyterlite-core-split
@@ -15,7 +16,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: bc2393d2218dbd666a2854c669b59503de207110511baa80b0025facb7f0c9e0
+  sha256: 051dbb45d401336400a894d9eb8021968bf52645b23ce31a0dfc2914ebcb2faa
 
 build:
   number: 0
@@ -54,7 +55,7 @@ outputs:
         script:
           - jupyter-lite --help
     about:
-      summary: Tools for building JupyterLite sites
+      summary: ${{ summary }}
       license_file:
         - LICENSE
         - third-party-licenses.json
@@ -80,7 +81,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [libarchive])
+      summary: ${{ summary }} (with [libarchive])
 
   - package:
       name: jupyterlite-core-with-lab
@@ -104,7 +105,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [lab])
+      summary: ${{ summary }} (with [lab])
 
   - package:
       name: jupyterlite-core-with-contents
@@ -127,7 +128,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [contents])
+      summary: ${{ summary }} (with [contents])
 
   - package:
       name: jupyterlite-core-with-translation
@@ -150,7 +151,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [translation])
+      summary: ${{ summary }} (with [translation])
 
   - package:
       name: jupyterlite-core-with-serve
@@ -173,7 +174,8 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [serve])
+      summary: ${{ summary }} (with [serve])
+      license: BSD-3-Clause
 
   - package:
       name: jupyterlite-core-with-check
@@ -196,7 +198,7 @@ outputs:
         script:
           - jupyter lite --help
     about:
-      summary: Tools for building JupyterLite sites (with [check])
+      summary: ${{ summary }} (with [check])
 
   - package:
       name: jupyterlite-core-with-all
@@ -221,7 +223,7 @@ outputs:
       - requirements:
           run:
             - pytest-console-scripts >=1.4.0
-            - pytest-cov <7
+            - pytest-cov >=7
             - python ${{ python_min }}.*
             - if: linux
               then:
@@ -230,13 +232,15 @@ outputs:
           env:
             JUPYTER_PLATFORM_DIRS: "1"
           content:
+            - pip check
             - jupyter lite --help
+            - echo "tool.coverage.run.patch = ['subprocess']" > pyproject.toml
             - pytest -vv --tb=long --color=yes --pyargs jupyterlite_core --script-launch-mode=subprocess --cov=jupyterlite_core --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93
     about:
-      summary: Tools for building JupyterLite sites (with [all])
+      summary: ${{ summary }} (with [all])
 
 about:
-  summary: Tools for building JupyterLite sites
+  summary: ${{ summary }}
   license: BSD-3-Clause
   license_file: LICENSE
   homepage: https://pypi.org/project/jupyterlite-core
