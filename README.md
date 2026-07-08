@@ -254,6 +254,3 @@ Feedstock Maintainers
 * [@jtpio](https://github.com/jtpio/)
 * [@martinRenou](https://github.com/martinRenou/)
 
-
-<!-- dummy commit to enable rerendering -->
-
