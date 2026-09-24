@@ -2,10 +2,10 @@
 schema_version: 1
 
 context:
-  version: "0.9.0a1"
-  jupyterlab_min: "4.7.0a1"
+  version: "0.9.0a2"
+  jupyterlab_min: "4.7.0a2"
   jupyterlab_max: "4.8.0"
-  notebook_min: "7.7.0a1"
+  notebook_min: "7.7.0a2"
   notebook_max: "7.8.0"
   python_check_max: "3.14"
 
@@ -14,8 +14,8 @@ recipe:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: 41ebcec8775ebbd0f3f8cab36ae32febeb8aee0c3fe11d9d7576988429a0bb4a
+  url: https://files.pythonhosted.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
+  sha256: 48070a52831f15f925e57e03a969ad5255a76aa22669f529b654241d1001045f
 
 build:
   number: 0
@@ -27,7 +27,7 @@ outputs:
     build:
       noarch: python
       script:
-        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
         - ${{ PYTHON }} ${{ RECIPE_DIR }}/extract-third-party-licenses.py
       python:
         entry_points:
@@ -42,6 +42,13 @@ outputs:
         - jupyter_core >=4.7
         - python >=${{ python_min }}
     tests:
+      - package_contents:
+          strict: true
+          files:
+            -
+          site_packages:
+            - jupyterlite_core/**
+            - jupyterlite_core-${{ version }}.dist-info/**
       - python:
           imports: jupyterlite_core
           pip_check: true
