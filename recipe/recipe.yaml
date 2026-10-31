@@ -2,12 +2,12 @@
 schema_version: 1
 
 context:
-  version: "0.8.6"
-  jupyterlab_min: "4.6.3"
+  version: "0.8.7"
+  jupyterlab_min: "4.6.5"
   jupyterlab_max: "4.7.0"
-  notebook_min: "7.6.2"
+  notebook_min: "7.6.4"
   notebook_max: "7.7.0"
-  python_check_max: "3.14"
+  python_check_max: "3.15"
   summary: Tools for building JupyterLite sites
 
 recipe:
@@ -16,7 +16,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-core/jupyterlite_core-${{ version }}.tar.gz
-  sha256: d6abd7ff7efb069186db060fbf4a43033ce09373ec3c7273565e0e0819346eb2
+  sha256: 22ff5f082d02d4ce8603872833c5a158e2fa6428e56606829c6f03e56acdbc4b
 
 build:
   number: 0
