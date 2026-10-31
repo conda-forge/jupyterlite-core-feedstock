@@ -3,11 +3,11 @@ schema_version: 1
 
 context:
   version: "0.8.7"
-  jupyterlab_min: "4.6.3"
+  jupyterlab_min: "4.6.5"
   jupyterlab_max: "4.7.0"
-  notebook_min: "7.6.2"
+  notebook_min: "7.6.4"
   notebook_max: "7.7.0"
-  python_check_max: "3.14"
+  python_check_max: "3.15"
   summary: Tools for building JupyterLite sites
 
 recipe:
